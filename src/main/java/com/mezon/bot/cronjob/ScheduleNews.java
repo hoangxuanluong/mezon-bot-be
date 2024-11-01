@@ -53,7 +53,10 @@ public class ScheduleNews {
             if (newsArrayResponse != null && newsArrayResponse.length > 0) {
                 List<News> newNewsList = Arrays.stream(newsArrayResponse)
                         .filter(newsData ->
-                                newsData.getTitle() != null && newsData.getUrl() != null && !existingUrls.contains(newsData.getUrl())
+                                newsData.getTitle() != null &&
+                                        newsData.getUrl() != null &&
+                                        newsData.getPublishDate() != null &&
+                                        !existingUrls.contains(newsData.getUrl())
                         )
                         .map(newsData -> {
                             String urlResult = (newsData.getUrl() == null || newsData.getUrl().isEmpty())
