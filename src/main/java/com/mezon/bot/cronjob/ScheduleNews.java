@@ -56,7 +56,7 @@ public class ScheduleNews {
                                 newsData.getTitle() != null &&
                                         newsData.getUrl() != null &&
                                         newsData.getPublishDate() != null &&
-                                        !existingUrls.contains(newsData.getUrl())
+                                        !existingUrls.contains(new StringBuilder("https://baomoi.com").append(newsData.getUrl()).toString())
                         )
                         .map(newsData -> {
                             String urlResult = (newsData.getUrl() == null || newsData.getUrl().isEmpty())
